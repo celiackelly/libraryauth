@@ -4,17 +4,24 @@
     box-sizing: border-box;
 }
 
-body {
-    background: rgb(175, 175, 191);
+/*We probably don't want this bg on all pages, though...*/
+html {
+    /* 62.5% of 16px browser font size is 10px */
+    font-size: 62.5%;
     font-family: "Edu TAS Beginner", sans-serif;
-    /* background-image: url("../images/books.jpg"); */
-    background-repeat: no-repeat;
-    background-position: 0 20%;
-    background-size: 95% 100%;
-    background-size: cover;
-}
 
-.layout {
+    /*
+    https://css-tricks.com/perfect-full-page-background-image/
+    Better to use html element for the full-page bg img, as it’s always at least the height of the browser window
+    */
+    background: url("../images/books-bg.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.hero {
     color: white;
     width: 600px;
     position: absolute;
@@ -31,10 +38,26 @@ body {
 h1 {
     margin-bottom: 20px;
     padding: 10px;
-    font-size: 4rem;
+    font-size: 5rem;
+    text-shadow: 2px 2px 5px #000;
 }
 
-a {
-    padding: 20px;
-    font-size: 1rem;
+.btn-primary {
+    background: #8be1f0;
+    color: #000;
+    border-radius: 10px;
+    padding: .75rem 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #ade0e9;
+    color: #000;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
